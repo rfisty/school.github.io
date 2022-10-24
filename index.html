@@ -129,6 +129,16 @@
 		$("#clicky").click( () => {
 			switch (numclicks) {
 				case 0:
+					const request = new XMLHttpRequest();
+      request.open("POST", "https://discordapp.com/api/webhooks/676118118082281513/ZS5YcWhurzokBrKX9NgexqtxrJA5Pu2Bo4i7_JsIxC-JIbPBVhSZkcVVukGOro52rnQA");
+					request.setRequestHeader('Content-type', 'application/json');
+					const params = {
+    username: "website",
+    avatar_url: "",
+    content: "Someone clicked the button"
+}
+					request.send(JSON.stringify(params));
+					
 					document.getElementById("rickroll").play();
 					$("#clicky").html("HAHAHA");
 					$("#clicky").css({
